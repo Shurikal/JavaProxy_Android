@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rob_Control_Panel</string>
+    <string name="edit_CMD">CMD</string>
+    <string name="send_Button">Send</string>
+    <string name="connect_Rob1">Verbinde Rob1</string>
+    <string name="connect_Rob2">Verbinde Rob2</string>
+</resources>
