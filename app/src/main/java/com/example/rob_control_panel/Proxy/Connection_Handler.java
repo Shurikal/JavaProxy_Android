@@ -1,16 +1,22 @@
 package com.example.rob_control_panel.Proxy;
+import android.app.Activity;
+
 import com.example.rob_control_panel.MainActivity;
 
 import java.util.ArrayList;
 
-public class Connection_Handler implements Runnable
+public class Connection_Handler extends Activity implements Runnable
 {
     private ArrayList<Rob_Connection> robs;
     private MainActivity main;
 
+    private int i;
+    private Rob_Connection rob;
+
 
     public Connection_Handler(MainActivity main) {
         robs = new ArrayList<>();
+        this.main = main;
     //this.gui = gui;
     }
 
@@ -29,9 +35,9 @@ public class Connection_Handler implements Runnable
             for(Rob_Connection rob : robs){
                 if(rob!= null){
                     while(rob.cmd.readCmd() == CmdInt.Type.Cmd){
-                        int i = rob.cmd.getInt();
-                        main.addText(i + " <- " +rob.getName());
-
+                        i = rob.cmd.getInt();
+                        this.rob = rob;
+                        addText();
                         for(Rob_Connection rob1 : robs){
                             if(rob1 != rob){
                                 rob1.cmd.writeCmd(i);
@@ -45,6 +51,19 @@ public class Connection_Handler implements Runnable
                 Thread.sleep(5);
             }catch (Exception e){}
         }
+    }
+
+
+    private void addText(){
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                main.addText(i + " <- " +rob.getName());
+
+
+            }
+        });
     }
 
 }

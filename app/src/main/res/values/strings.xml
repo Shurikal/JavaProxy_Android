@@ -8,4 +8,8 @@
     <string name="send_4">Sende Fangbereit</string>
     <string name="send_2">Sende Fahren</string>
     <string name="send_Start">Sende Start</string>
+    <string name="console_title">Konsole</string>
+    <string name="autoscroll">Autoscroll</string>
+    <string name="disconnect">Trenne Verbindung</string>
+    <string name="send">Sende</string>
 </resources>
