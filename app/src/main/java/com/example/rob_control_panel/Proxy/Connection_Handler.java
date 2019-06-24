@@ -1,11 +1,15 @@
 package com.example.rob_control_panel.Proxy;
+import com.example.rob_control_panel.MainActivity;
+
 import java.util.ArrayList;
 
 public class Connection_Handler implements Runnable
 {
     private ArrayList<Rob_Connection> robs;
+    private MainActivity main;
 
-    public Connection_Handler() {
+
+    public Connection_Handler(MainActivity main) {
         robs = new ArrayList<>();
     //this.gui = gui;
     }
@@ -26,7 +30,7 @@ public class Connection_Handler implements Runnable
                 if(rob!= null){
                     while(rob.cmd.readCmd() == CmdInt.Type.Cmd){
                         int i = rob.cmd.getInt();
-                        //gui.addText(i + " <- " +rob.getName());
+                        main.addText(i + " <- " +rob.getName());
 
                         for(Rob_Connection rob1 : robs){
                             if(rob1 != rob){

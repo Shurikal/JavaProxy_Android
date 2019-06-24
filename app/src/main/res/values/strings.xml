@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Rob_Control_Panel</string>
     <string name="edit_CMD">CMD</string>
-    <string name="send_Button">Send</string>
+    <string name="send_Button">"Send "</string>
     <string name="connect_Rob1">Verbinde Rob1</string>
     <string name="connect_Rob2">Verbinde Rob2</string>
+    <string name="send_1">Sende Wurfbereit</string>
+    <string name="send_4">Sende Fangbereit</string>
+    <string name="send_2">Sende Fahren</string>
+    <string name="send_Start">Sende Start</string>
 </resources>
